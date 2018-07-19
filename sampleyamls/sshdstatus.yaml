@@ -1,0 +1,9 @@
+---
+- hosts: all
+  - name: start service sshd, if not running
+    service:
+      - name: sshd
+       state: started
+
+...
+

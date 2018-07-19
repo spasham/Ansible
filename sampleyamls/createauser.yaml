@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+    - name: create a login user
+      user:
+        name: ansible
+        password: 'ansbile'
+#       groups: sudo 
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/ansible

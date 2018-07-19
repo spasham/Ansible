@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: find who is executing
+    command: whoami
+  - name: ping all
+    ping:
+  - name: find out current directory
+    command: pwd
+  - name: install tree
+    yum:
+      name: tree
+      state: present

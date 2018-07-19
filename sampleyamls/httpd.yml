@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+    - name: install jdk
+      yum:
+        name: java-1.8.0-openjdk.x86_64
+        state: present
+
+    - name: install httpd
+        yum: 
+          name: httpd
+          state: present
+
+    - name: start and enable httpd
+        service: start, enable
+

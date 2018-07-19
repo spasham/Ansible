@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: check rootvg free space
+      shell: vgdisplay rootvg | grep -i free
+      register: rootvg
+      ignore_errors: true
+  
+    - name: check /var/log size
+      shell: df -h /var/log
+      register: logsize
+      ignore_errors: true
+
+    - debug: var=rootvg.stdout_lines
+
+    - debug: var=logsize.stdout_lines
+
+
